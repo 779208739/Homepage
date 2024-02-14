@@ -1,0 +1,51 @@
+@font-face {
+  font-family: "JetBrainMono-Regular";
+  src: url("./JetBrainsMono-Regular.woff2") format("woff2");
+}
+
+@card-background-color: #f6f6f6;
+@card-box-shadow:0 4px 8px rgba(0, 0, 0, 0.1);
+@border-color: #dfdfdf;
+@font-primary-color: black;
+@font-second-color: #6c6c6c;
+
+@font-size-small: 1rem;
+@font-size-medium: 1.1rem;
+@font-size-large: 1.2rem;
+
+@font-smoothing: {
+  -webkit-font-smoothing: antialiased; /*chrome、safari*/
+  -moz-osx-font-smoothing: grayscale; /*firefox*/
+};
+@font-style-large: {
+  @font-smoothing();
+  font-family: "JetBrainMono-Regular";
+  font-size: @font-size-large;
+  letter-spacing: 0.2rem;
+};
+@font-style-medium: {
+  @font-smoothing();
+  font-family: "JetBrainMono-Regular";
+  font-size: @font-size-medium;
+  letter-spacing: 0.15rem;
+};
+@font-style-small: {
+  @font-smoothing();
+  font-family: "JetBrainMono-Regular";
+  font-size: @font-size-small;
+  letter-spacing: 0.1rem;
+};
+@card-style: {
+  background-color: @card-background-color;
+  border-radius: 1rem;
+  box-shadow: @card-box-shadow;
+  padding: 3rem;
+};
+@font-hover-style: {
+  &:hover {
+    color: black;
+    transition: 0.5s ease;
+  }
+};
+
+@hover-color: #f0f1ea;

@@ -1,0 +1,22 @@
+@import "./constant.less";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+
+  min-height: 100vh;
+}
+
+.main {
+  flex: 1;
+  margin: auto;
+  padding: 2rem 1rem 0 1rem;
+  max-width: 60rem;
+}
+
+// Remove default transition
+@media (prefers-reduced-motion: reduce) {
+  .wrapper {
+    transition: color none;
+  }
+}

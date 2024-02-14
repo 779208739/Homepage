@@ -1,0 +1,120 @@
+@import "./constant.less";
+
+.divMain {
+  display: flex;
+  align-items: start;
+  .divArticles {
+    flex: 1;
+    margin: 0 2rem 0 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+
+    .divSpecs,
+    .divSens {
+      @card-style();
+      margin: 0 0 2rem 0;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      .title {
+        @font-style-large();
+        grid-column: span 2;
+      }
+      .titleItem {
+        @font-style-small();
+        color: @font-second-color;
+        margin: 0 0 0.5rem 0;
+      }
+      .contentItem {
+        @font-style-small();
+      }
+    }
+  }
+  .divProfile {
+    @card-style();
+    text-align: center;
+    margin: 0 0 2rem 0;
+    .imgAvatar {
+      height: 10rem;
+      width: 10rem;
+    }
+    .textProfile {
+      @font-style-small();
+      @font-hover-style();
+      color: @font-second-color;
+    }
+    .divSocials {
+      text-align: center;
+      ul {
+        padding: 0;
+        list-style: none;
+
+        .socialCard {
+          display: flex;
+          align-items: center;
+          img {
+            height: 1.5rem;
+            width: 1.5rem;
+            margin: 0.4rem;
+          }
+          a {
+            @font-hover-style();
+            @font-style-medium();
+            color: @font-second-color;
+            letter-spacing: 0.15rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .divMain {
+    align-items: stretch;
+    flex-direction: column;
+    .divArticles {
+      margin: 0;
+      order: 1;
+      .divSpecs,
+      .divSens {
+        padding: 1rem;
+      }
+    }
+    .divProfile {
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      .textProfile {
+        display: none;
+      }
+    }
+  }
+}
+@media screen and (max-width: 500px) {
+  .divMain {
+    align-items: stretch;
+    justify-content: start;
+
+    .divArticles {
+      .divSpecs,
+      .divSens {
+        grid-template-columns: repeat(1, 1fr);
+        .title {
+          grid-column: 1;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 380px) {
+  .divMain {
+    .divProfile {
+      flex-direction: column;
+      align-items: center;
+      justify-content: start;
+    }
+  }
+}
